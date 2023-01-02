@@ -1,33 +1,35 @@
 public class TreeRecursion {
-    public static void fun1(int n) {
+    public static void inorder(int n) {
         if (n > 0) {
-            fun1(n - 1);
+            inorder(n - 1);
             System.out.print(n + " ");
-            fun1(n - 1);
+            inorder(n - 1);
         }
     }
 
-    static void fun2(int n) {
+    static void preorder(int n) {
         if (n > 0) {
             System.out.print(n + " ");
-            fun2(n - 1);
-            fun2(n - 1);
+            preorder(n - 1);
+            preorder(n - 1);
         }
     }
 
-    static void fun3(int n) {
+    static void postorder(int n) {
         if (n > 0) {
-            fun3(n - 1);
-            fun3(n - 1);
+            postorder(n - 1);
+            postorder(n - 1);
             System.out.print(n + " ");
         }
     }
 
     public static void main(String[] args) {
-        fun1(3);
+        inorder(3);
         System.out.println();
-        fun2(3);
+        
+        preorder(3);
         System.out.println();
-        fun3(3);
+        
+        postorder(3);
     }
 }
